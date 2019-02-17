@@ -9,6 +9,13 @@ const handle = app.getRequestHandler();
 app.prepare()
   .then( () => {
     const server = express();
+
+    // Handle the calls to /p/:id server side
+    server.get('/p/:title', (req, res) => {
+      const actualPage = '/post'
+      const queryParams = { title: req.params.title }
+      app.render(req, res, actualPage, queryParams)
+    })
   
     // for now capture all urls
     server.get('*', (req, res) => {
