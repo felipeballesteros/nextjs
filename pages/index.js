@@ -2,6 +2,14 @@ import Layout from '../components/Layout';
 import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
 
+import styled from 'styled-components';
+
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
+
 const PostLink = (props) => (
   <li>
     <Link 
@@ -15,7 +23,7 @@ const PostLink = (props) => (
 //Set up initial layout of the page
 const Index = (props) => (
     <Layout>
-        <h1>Batman TV Shows</h1>
+        <Title>Batman TV Shows</Title>
         <ul>
             {props.shows.map(({show}) => (
                 <li key={show.id}>

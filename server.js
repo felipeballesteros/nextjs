@@ -13,9 +13,6 @@ app.prepare()
         // Handle the calls to /p/:id server side
         server.get('/p/:id', (req, res) => {
             const actualPage = '/post'
-
-            console.log('REQ PARAMS ID: ', req.params.id);
-
             const queryParams = { id: req.params.id }
             app.render(req, res, actualPage, queryParams)
         })
