@@ -1,14 +1,15 @@
-import Layout from '../components/Layout';
+import Layout from '../components/Layout/Layout';
 import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
+import Title from '../components/Title/Title'
 
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-`;
+// const Title = styled.h1`
+//   font-size: 1.5em;
+//   text-align: center;
+//   color: palevioletred;
+// `;
 
 const PostLink = (props) => (
   <li>
@@ -23,7 +24,7 @@ const PostLink = (props) => (
 //Set up initial layout of the page
 const Index = (props) => (
     <Layout>
-        <Title>Batman TV Shows</Title>
+        <Title text={'Batman TV Shows'}></Title>
         <ul>
             {props.shows.map(({show}) => (
                 <li key={show.id}>
