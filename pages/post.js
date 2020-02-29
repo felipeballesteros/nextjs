@@ -5,7 +5,7 @@ const Post = (props) => (
     <Layout>
         <h1>{props.show.name}</h1>
         <p>{props.show.summary.replace(/<[/]?p>/g, '')}</p>
-        <img src={props.show.image.medium} />
+        <img src={props.show.image.medium.replace(/^http/, 'https')} />
     </Layout>
 );
 
