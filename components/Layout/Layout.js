@@ -16,7 +16,9 @@ const Layout = (props) => (
         <CustomHead />
         <div>
             <Header />
-            {props.children}
+            <div className="links">
+                {props.children}
+            </div>
         </div>
     </React.Fragment>
 )

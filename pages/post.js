@@ -3,9 +3,18 @@ import fetch from 'isomorphic-unfetch';
 
 const Post = (props) => (
     <Layout>
-        <h1>{props.show.name}</h1>
-        <p>{props.show.summary.replace(/<[/]?p>/g, '')}</p>
-        <img src={props.show.image.medium.replace(/^http/, 'https')} />
+        <div className="card">
+            <div className="additional">
+            <div className="user-card">
+                <title id="title">{props.show.name}</title>
+                <img src={props.show.image.medium.replace(/^http/, 'https')} />
+            </div>
+            </div>
+            <div className="general">
+                <h1>{props.show.name}</h1>
+                <p>{props.show.summary.replace(/<[/]?p>/g, '')}</p>
+            </div>
+        </div>
     </Layout>
 );
 
