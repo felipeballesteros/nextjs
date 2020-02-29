@@ -9,6 +9,7 @@ const handle = app.getRequestHandler();
 app.prepare()
     .then(() => {
         const server = express();
+        const port = process.env.PORT || 3030
 
         // Handle the calls to /p/:id server side
         server.get('/p/:id', (req, res) => {
@@ -23,9 +24,9 @@ app.prepare()
         })
 
         //Start the server, catch any errors
-        server.listen(3000, (err) => {
+        server.listen(port, (err) => {
             if (err) throw err;
-            console.error('>Ready on http://localhost:3000')
+            console.error(`>Ready on http://localhost:${port}`)
         })
     })
 
